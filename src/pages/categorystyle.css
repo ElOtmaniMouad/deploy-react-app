@@ -1,0 +1,183 @@
+.category-page article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .category-page article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  .category-page {
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Neutral color for readability */
+}
+
+/* Styling for article cards */
+.category-page article {
+    --img-scale: 1.01;
+    position: relative;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on cards */
+.category-page article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced title styling */
+.category-page article h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #4A4A4A; /* Dark grey for contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0 0 18px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for title color */
+.category-page article:hover h2 {
+    color: #28666e;
+}
+
+/* Styling for images */
+.category-page article img {
+    width: 100%;
+    height: auto;
+    transform: scale(var(--img-scale));
+    transition: transform 0.3s ease;
+}
+
+/* Enhanced article body styling */
+.category-page .article-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Stylish link */
+.category-page article a {
+    font-weight: 500;
+    color: #28666e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.category-page article a:hover {
+    color: #00838f;
+}
+
+  
+  .category-page figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  .category-page article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .category-page .article-body {
+    padding: 24px;
+  }
+  
+  .category-page article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+  }
+  
+  .category-page article a:focus {
+    outline: 1px dotted #28666e;
+  }
+  
+  .category-page article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  .category-page article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  .category-page .articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .category-page article {
+      container: card/inline-size;
+    }
+    .category-page .article-body p {
+      display: none;
+    }
+  }
+  
+  @container card (min-width: 380px) {
+    .category-page .article-wrapper {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+    }
+    .category-page .article-body {
+      padding-left: 0;
+    }
+    .category-page figure {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .category-page figure img {
+      height: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+  
+  .category-page .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
+  
